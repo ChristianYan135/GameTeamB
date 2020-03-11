@@ -67,9 +67,12 @@ public class PlayerMove : MonoBehaviour
     }
     void Move()
     {
-        if (pressing)
-            if(r.velocity.magnitude < speed)
-               r.velocity = direction * speed;
+        if (r.velocity.magnitude < speed)
+        {
+            dashing = false;
+            if (pressing)
+                r.velocity = direction * speed;
+        }
     }
     void Boosting()
     {
@@ -77,6 +80,7 @@ public class PlayerMove : MonoBehaviour
         {
             r.AddForce(direction * dashSpeed / Time.deltaTime);
             dashTimer = 0;
+            dashing = true;
         }
         if (dashTimer < dashTimerMax)
             dashTimer = Mathf.Clamp(dashTimer + Time.deltaTime, 0.0f, dashTimerMax);
