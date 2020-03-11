@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     public KeyCode boostKey;
     public bool dashing;
     public float dashTimerMax;
-    float dashTimer;
+    public float dashTimer;
     Vector2 direction = new Vector2(0, 0);
     Rigidbody2D r;
     Vector2 up;

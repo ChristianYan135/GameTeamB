@@ -153,10 +153,10 @@ RectTransform:
   m_Father: {fileID: 1877562926}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.60550004, y: 0}
-  m_SizeDelta: {x: 1.16843, y: 0.2128}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -1.2935, y: 0.000000033193}
+  m_SizeDelta: {x: 2.5065002, y: 0.4438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94996125
 MonoBehaviour:
@@ -447,6 +447,7 @@ MonoBehaviour:
   boostKey: 32
   dashing: 0
   dashTimerMax: 3
+  dashTimer: 0
 --- !u!50 &744222539
 Rigidbody2D:
   serializedVersion: 4
@@ -604,7 +605,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1.285, y: 2.399}
+  m_SizeDelta: {x: 3.963, y: 4.454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744299917
 MonoBehaviour:
@@ -679,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 744222535}
+  bar: {fileID: 94996123}
 --- !u!1 &1877562925
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,8 +716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 0.6425, y: 1.02}
-  m_SizeDelta: {x: 1.211, y: 0.25}
+  m_AnchoredPosition: {x: 1.9815, y: 1.39}
+  m_SizeDelta: {x: 2.587, y: 0.498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877562927
 MonoBehaviour:
