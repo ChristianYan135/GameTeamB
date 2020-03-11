@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     public bool dashing;
     public float dashTimerMax;
     public float dashTimer;
-    Vector2 direction = new Vector2(0, 0);
+    public Vector2 direction = new Vector2(0, 0);
     Rigidbody2D r;
     Vector2 up;
     Vector2 down;
@@ -73,14 +73,16 @@ public class PlayerMove : MonoBehaviour
             if (pressing)
                 r.velocity = direction * speed;
         }
+        else
+            dashing = true;
+        if(dashTimer < 0.1f)
+            r.velocity = direction * dashSpeed;
     }
     void Boosting()
     {
         if(Input.GetKeyDown(boostKey) && dashTimer == dashTimerMax)
         {
-            r.AddForce(direction * dashSpeed / Time.deltaTime);
             dashTimer = 0;
-            dashing = true;
         }
         if (dashTimer < dashTimerMax)
             dashTimer = Mathf.Clamp(dashTimer + Time.deltaTime, 0.0f, dashTimerMax);
