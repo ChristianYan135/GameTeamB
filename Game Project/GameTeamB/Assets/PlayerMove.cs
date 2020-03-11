@@ -29,7 +29,7 @@ public class PlayerMove : MonoBehaviour
         down = Vector2.down;
         left = Vector2.left;
         right = Vector2.right;
-        dashTimer = 0;
+        dashTimer = dashTimerMax;
     }
 
     // Update is called once per frame
