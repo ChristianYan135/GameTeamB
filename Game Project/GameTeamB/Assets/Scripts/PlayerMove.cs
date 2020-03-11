@@ -64,7 +64,6 @@ public class PlayerMove : MonoBehaviour
         }
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f);
         direction.Normalize();
-        Debug.Log(transform.eulerAngles);
     }
     void Move()
     {
