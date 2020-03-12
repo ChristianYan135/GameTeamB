@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -86,5 +87,9 @@ public class PlayerMove : MonoBehaviour
         }
         if (dashTimer < dashTimerMax)
             dashTimer = Mathf.Clamp(dashTimer + Time.deltaTime, 0.0f, dashTimerMax);
+    }
+    void OnDestroy()
+    {
+        SceneManager.LoadScene("Main Level", LoadSceneMode.Single);
     }
 }
