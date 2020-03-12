@@ -34,9 +34,10 @@ public class Ball : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        Debug.Log("TEST");
         if (col.gameObject.layer == LayerMask.NameToLayer("Player1"))
         {
-            if (col.collider.gameObject.GetComponent<PlayerMove>().dashing)
+            if (col.gameObject.GetComponent<PlayerMove>().dashing)
             {
                 rigidbody2d.velocity = startSpeed * (speedM * timesHit);
                 transform.rotation = col.gameObject.transform.rotation;
@@ -61,7 +62,7 @@ public class Ball : MonoBehaviour
             }
             else if (!col.gameObject.GetComponent<PlayerMove>().dashing && turn == 1)
             {
-                Destroy(.gameObject);
+                Destroy(col.gameObject);
             }
         }
     }
