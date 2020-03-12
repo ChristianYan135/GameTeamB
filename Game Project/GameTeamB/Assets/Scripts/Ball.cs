@@ -11,6 +11,9 @@ public class Ball : MonoBehaviour
     int timesHit = 1;
 
     int turn = 0;
+
+    public GameObject bottomBall;
+
     Rigidbody2D rigidbody2d;
 
     SpriteRenderer renderer;
@@ -26,40 +29,39 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rigidbody2d.velocity);
+        Debug.Log(turn);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.collider.gameObject.layer == LayerMask.NameToLayer("Player1"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player1"))
         {
             if (col.collider.gameObject.GetComponent<PlayerMove>().dashing)
             {
                 rigidbody2d.velocity = startSpeed * (speedM * timesHit);
-                transform.rotation = col.collider.gameObject.transform.rotation;
+                transform.rotation = col.gameObject.transform.rotation;
                 renderer.color = Color.blue;
                 timesHit++;
                 turn = 1;
             }
-            else if(!col.collider.gameObject.GetComponent<PlayerMove>().dashing && turn == 2)
+            else if(!col.gameObject.GetComponent<PlayerMove>().dashing && turn == 2)
             {
-                Destroy(col.collider.gameObject);
+                Destroy(col.gameObject);
             }
-            
         }
-        if (col.collider.gameObject.layer == LayerMask.NameToLayer("Player2"))
+        if (col.gameObject.layer == LayerMask.NameToLayer("Player2"))
         {
-            if (col.collider.gameObject.GetComponent<PlayerMove>().dashing)
+            if (col.gameObject.GetComponent<PlayerMove>().dashing)
             {
                 rigidbody2d.velocity = startSpeed * (speedM * timesHit);
-                transform.rotation = col.collider.gameObject.transform.rotation;
+                transform.rotation = col.gameObject.transform.rotation;
                 renderer.color = Color.red;
                 timesHit++;
                 turn = 2;
             }
-            else if (!col.collider.gameObject.GetComponent<PlayerMove>().dashing && turn == 1)
+            else if (!col.gameObject.GetComponent<PlayerMove>().dashing && turn == 1)
             {
-                Destroy(col.collider.gameObject);
+                Destroy(.gameObject);
             }
         }
     }
